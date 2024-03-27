@@ -36,3 +36,346 @@
     transform: rotate(360deg);
   }
 }
+/* Importing Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar .logo {
+  color: #fff;
+  font-weight: 600;
+  font-size: 2.1rem;
+  text-decoration: none;
+}
+
+.navbar .logo span {
+  color: #C06B3E;
+}
+
+.navbar .menu-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.navbar a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #C06B3E;
+}
+
+/* Add these styles to your existing CSS file */
+
+/* Hero Section Styles */
+.hero-section {
+  background-image: url('../public/coffee-shop.jpg'); /* Add a background image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding: 150px 0; /* Increase padding for better spacing */
+  text-align: center;
+  color: #fff;
+}
+
+/* Hero Heading Styles */
+.hero-heading {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+/* Coffee Shop Name Styles */
+.coffee-shop-name {
+  color: #ff9933; /* Choose a color that stands out */
+  display: inline
+}
+
+/* Hero Description Styles */
+.hero-description {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff9933; /* Use the same color as the coffee shop name for consistency */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #914e2b; /* Darker shade of the primary color on hover */
+}
+
+
+.hero-section .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  color: #fff;
+}
+
+.hero-section .content h2 {
+  font-size: 2.5rem;
+  max-width: 600px;
+  line-height: 70px;
+}
+
+.hero-section .content p {
+  font-weight: 300;
+  max-width: 600px;
+  margin-top: 15px;
+}
+
+.hero-section .content button {
+  background: #fff;
+  padding: 12px 30px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-top: 38px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.hero-section .content button:hover {
+  color: #fff;
+  background: #914e2b;
+}
+
+#close-menu-btn {
+  position: absolute;
+  color: #fff;
+  right: 8px;
+  top: 10px;
+  font-size: larger;
+  cursor: pointer;
+  display: none;
+}
+
+#hamburger-btn {
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  header.show-mobile-menu::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+  }
+
+  .navbar .logo {
+    font-size: 1.7rem;
+  }
+  #hamburger-btn, #close-menu-btn {
+    display: block;
+  }
+
+  .navbar .menu-links {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 25%;
+    flex-direction: column;
+    padding: 5%;
+    transition: left 0.2s ease;
+  }
+
+  header.show-mobile-menu .navbar .menu-links {
+    right: 0;
+  }
+
+  .hero-section .content {
+    text-align: center;
+  }
+
+  .hero-section .content :is(h2, p) {
+    max-width: 100%;
+  }
+
+  .hero-section .content h2 {
+    font-size: 2.3rem;
+    line-height: 60px;
+  }
+  
+  .hero-section .content button {
+    padding: 9px 18px;
+  }
+  
+}
+/* App.css */
+
+/* About Us Section Styles */
+.about-section {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-image: url('../public/about.jpg');
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.about-section .content {
+  max-width: 800px;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #fff; 
+  text-align: center;
+}
+
+.about-section p {
+  font-size: 1.2rem; 
+  line-height: 1.6; 
+  color: #fff;
+  text-align: center;
+}
+
+dl, ol, ul {
+  margin-bottom: 0;
+}
+.menu-section {
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  background-image: url('../public/menu.jpg');
+  color: #3b2411;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.menu-item {
+  margin-bottom: 30px;
+}
+
+.menu-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.menu-item p {
+  font-size: 1.2rem;
+  color: #666;
+}
+.contact-section {
+  background-size: cover;
+  background-position: center;
+  background-image: url('../public/contact.jpg');
+  color: #3b2411;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 100px 0;
+  transition: background-color 0.3s ease;
+  justify-content: center; 
+  align-items: center;
+}
+
+.container {
+  max-width: 600px; /* Increased width for the form */
+  margin: 0 auto;
+}
+
+.contact-form {
+  background-color: #d8d2d2;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #3b2411;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #3b2411;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding and border included in width calculation */
+}
+
+textarea {
+  height: 150px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
