@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-
 // Components
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
@@ -19,14 +18,14 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/coffee-shop"> {/* Set basename to your subdirectory */}
       <div className="App">
         {/* Header */}
         <header className={isMobileMenuOpen ? "show-mobile-menu" : ""}>
           <nav className="navbar">
             <Link className="logo" to="/"> QScript Coffee<span>.</span></Link>
             <div id="hamburger-btn" onClick={toggleMobileMenu}>
-              <i style={{fontSize:"xx-large"}}     className={`fas ${isMobileMenuOpen ? "" : "fa-bars"}`}></i>
+              <i style={{fontSize:"xx-large"}} className={`fas ${isMobileMenuOpen ? "" : "fa-bars"}`}></i>
             </div>
             <ul className={`menu-links ${isMobileMenuOpen ? "mobile-menu-open" : ""}`}>
               <span id="close-menu-btn" className="fas fa-times" onClick={toggleMobileMenu} />
@@ -36,7 +35,6 @@ function App() {
               <li><Link to="/contact" onClick={toggleMobileMenu}>Contact</Link></li>
             </ul>
           </nav>
-
         </header>
 
         {/* Main content */}
